@@ -1,5 +1,11 @@
 6 Degrees of Kevin Bacon 
+----------
 
+main.py
+
+Lets you run depthFinder.py, breadthFinder.py, and graphReader.py.
+
+----------
 
 data.txt
 

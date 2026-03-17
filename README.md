@@ -48,3 +48,10 @@ breadthFinder.py
 
 Uses the (Node) class and (nodeStorage) dictionary from grapher.py.
 Finds a path from the starting actor to the target actor in a breadth-first-search format.
+
+----------
+
+customFinder.py
+
+Uses the (Node) class and (nodeStorage) dictionary from grapher.py.
+Starts breadth-first-search from two different points, then stops when their visited sets start overlapping.

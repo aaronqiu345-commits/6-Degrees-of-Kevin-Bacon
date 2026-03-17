@@ -2,6 +2,7 @@
 
 
 data.txt
+
 Holds movies and the actors that starred in them in a Movie|Actor|Actor|Actor (and so on) format.
 Line break between movies.
 If you want to change the data set, do it here.

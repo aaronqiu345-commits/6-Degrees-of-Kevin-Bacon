@@ -50,4 +50,3 @@ def doubleBread(node, target):
         for neighbor in nodeStorage[targetNext].neighbors:
           if neighbor.data not in targetVisited and neighbor.data not in targetQueue:
             targetQueue.append(neighbor.data)
-  return f"could not find {target}"

@@ -18,24 +18,13 @@ If you want to change the data set, do it here.
 
 ----------
 
-processor.py
+grapher.py
 
 Turns each line from data.txt and puts it into a list, named (lines).
-
-----------
-
-dictionaries.py
-
-Uses the (lines) list from processor.py.
 Takes each list from (lines) and makes a list of dictionaries out of them, named (neighborStorage).
 Dictionaries with movies as keys have values of the actors starring in them, and vice versa.
 A key's value is used to determine its node's neighbors.
 
-----------
-
-grapher.py
-
-Uses the (neighborStorage) list from dictionaries.py.
 Holds the Node class and uses data from (neighborStorage) to construct and link nodes.
 Nodes are passed into the (nodeStorage) dictionary as: Node.data:Node
 

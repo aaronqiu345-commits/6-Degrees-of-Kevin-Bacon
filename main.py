@@ -14,7 +14,7 @@ while True:
     depth(start, target)
     timeEnd = time.perf_counter()
     break
-  if todo.upper() == "BFS":
+  elif todo.upper() == "BFS":
     print("Breadth-First-Search selected.")
     start = input("Where do you want to start from? ")
     target = input("Where do you want to end at? ")
@@ -22,14 +22,14 @@ while True:
     breadth(start, target)
     timeEnd = time.perf_counter()
     break
-  if todo.upper() == "CUSTOM":
+  elif todo.upper() == "CUSTOM":
     print("Double-Breadth-Search selected.")
     start = input("Where do you want to start from? ")
     target = input("Where do you want to end at? ")
     timeStart = time.perf_counter()
     doubleBread(start, target)
     timeEnd = time.perf_counter()
-  if todo.upper() == "READ":
+  elif todo.upper() == "READ":
     print("Graph reading selected.")
     start = input("Where do you want to start from? ")
     timeStart = time.perf_counter()

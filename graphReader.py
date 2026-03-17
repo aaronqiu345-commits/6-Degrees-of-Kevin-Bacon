@@ -11,5 +11,3 @@ def read(node):
   while len(queue) != 0:
     print(f"|| Queue moving to {queue[0]} ||")
     read(queue.popleft())
-
-read("Movie1")

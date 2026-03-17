@@ -1,9 +1,11 @@
+from grapher import makeGraph
 from graphReader import read
 from breadthFinder import breadth
 from depthFinder import depth
 from customFinder import doubleBread
 import time
 
+makeGraph()
 while True:
   todo = input("DFS, BFS, CUSTOM, or READ? ")
   if todo.upper() == "DFS":

@@ -1,4 +1,7 @@
 6 Degrees of Kevin Bacon 
+
+To use this program, run in bash and type "python main.py" or "python3 main.py".
+
 ----------
 
 main.py

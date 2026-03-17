@@ -23,3 +23,4 @@ def breadth(start, target):
           return f"found {target} as a neighbor of {nodeStorage[next].data}"
         if neighbor.data not in visited and neighbor.data not in queue:
           queue.append(neighbor.data)
+  return f"could not find {target}"

@@ -1,52 +1,73 @@
 from grapher import Node, nodeStorage
 from collections import deque
-startQueue = deque([])
-targetQueue = deque([])
-startVisited = set()
-targetVisited = set()
+
+def constructPath(end1, prev1, end2, prev2):
+  print(prev1, prev2)
+  path = []
+  track1 = end1
+  track2 = end2
+  while track1 in prev1:
+    print(f"appending {track1} to {path}")
+    path.append(track1)
+    track1 = prev1[track1]
+  path.append(track1)
+  path = path[::-1]
+  while track2 in prev2:
+    print(f"appending {track2} to {path}")
+    path.append(track2)
+    track2 = prev2[track2]
+  path.append(track2)
+  return f"Path: {path}"
+
+def visitAndQueue(data, visit, queue):
+  visit.add(data)
+  queue.append(data)
 
 def doubleBread(node, target):
-  startQueue.append(node)
-  targetQueue.append(target)
-  timer = 0
+  startQueue = deque([node])
+  targetQueue = deque([target])
+  startVisited = {node}
+  targetVisited = {target}
+  startPrev = {}
+  targetPrev = {}
+  startLayers = 0
+  targetLayers = 0
+  timer = -1
   startVisited.add(node)
   while len(startQueue) != 0 and len(targetQueue) != 0:
-    print(f"Visited 1: {startVisited}")
-    print(f"Visited 2: {targetVisited}")
-    if not startVisited.isdisjoint(targetVisited):
-      print(f"path from {node} to {target} found")
-      return
-    while timer % 2 == 0:
-      timer += 1
+    print(startVisited)
+    print(targetVisited)
+    timer += 1
+    if timer % 2 == 0:
       startLayer = range(len(startQueue))
+      startLayers += 1
       for i in startLayer:
-        startQue = [] # purely a debugging/console list
-        for item in startQueue:
-          startQue.append(item)
-        print(f"Next up: {startQue}")
         startNext = startQueue.popleft()
-        startNeigh = [] # purely a debugging/console list
-        for neighbor in nodeStorage[startNext].neighbors:
-          startNeigh.append(neighbor.data)
-        print(f"Neighbors of {startNext}: {startNeigh}")
         startVisited.add(startNext)
         for neighbor in nodeStorage[startNext].neighbors:
-          if neighbor.data not in startVisited and neighbor.data not in startQueue:
-            startQueue.append(neighbor.data)
-    while timer % 2 == 1:
-      timer += 1
+          if neighbor.data in targetVisited:
+            startPrev[neighbor.data] = startNext
+            print(f"path from {node} to {target} found in {startLayers + targetLayers}")
+            print(neighbor.data)
+            print(constructPath(neighbor.data, startPrev, targetNext, targetPrev))
+            return
+          if neighbor.data not in startVisited:
+            startPrev[neighbor.data] = startNext
+            visitAndQueue(neighbor.data, startVisited, startQueue)
+    if timer % 2 == 1:
       targetLayer = range(len(targetQueue))
+      targetLayers += 1
       for i in targetLayer:
-        targetQue = [] # purely a debugging/console list
-        for item in targetQueue:
-          targetQue.append(item)
-        print(f"Next up: {targetQue}")
         targetNext = targetQueue.popleft()
-        targetNeigh = [] # purely a debugging/console list
-        for neighbor in nodeStorage[targetNext].neighbors:
-          targetNeigh.append(neighbor.data)
-        print(f"Neighbors of {targetNext}: {targetNeigh}")
         targetVisited.add(targetNext)
         for neighbor in nodeStorage[targetNext].neighbors:
-          if neighbor.data not in targetVisited and neighbor.data not in targetQueue:
-            targetQueue.append(neighbor.data)
+          if neighbor.data in startVisited:
+            targetPrev[neighbor.data] = targetNext
+            print(f"path from {node} to {target} found in {startLayers + targetLayers}")
+            print(neighbor.data)
+            print(constructPath(startNext, startPrev, neighbor.data, targetPrev))
+            return
+          if neighbor.data not in targetVisited:
+            targetPrev[neighbor.data] = targetNext
+            visitAndQueue(neighbor.data, targetVisited, targetQueue)
+  return f"could not find {target}"

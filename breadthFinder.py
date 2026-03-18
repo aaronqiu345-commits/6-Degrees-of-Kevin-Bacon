@@ -4,7 +4,7 @@ def breadth(start, target):
   queue = deque([start])
   visited = {start}
   prev = {}
-  path = []
+  path = [start]
   while len(queue) != 0:
     layer = range(len(queue))
     print(f"finished layer. next up: {queue}")

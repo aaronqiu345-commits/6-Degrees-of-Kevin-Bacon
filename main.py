@@ -4,14 +4,19 @@ from breadthFinder import breadth
 from depthFinder import depth
 from customFinder import doubleBread
 from dataMaker import randomize
+from dataDefault import default
 
 import time
 
-testCase = input("Would you like to randomize the test case? Type Y if so. ")
-if testCase.upper() == "Y":
+testCase = input("Would you like to randomize or reset the test case? Type RANDOM or RESET if so. ")
+if testCase.upper() == "RANDOM":
   digits = int(input("How many numbers long should movie/actor IDs be? (Duplicate IDs are deleted.) "))
   nodeCount = int(input("How many IDs should be generated? "))
   randomize(digits, nodeCount)
+  print("Test case randomized.")
+if testCase.upper() == "RESET":
+  default()
+  print("Test case reset.")
 
 makeGraph()
 while True:
@@ -41,7 +46,7 @@ while True:
     timeEnd = time.perf_counter()
   elif todo.upper() == "READ":
     print("Graph reading selected.")
-    start = input("Where do you want to start from? ")
+    start = input("Where do you want to start reading from? ")
     timeStart = time.perf_counter()
     read(start)
     timeEnd = time.perf_counter()

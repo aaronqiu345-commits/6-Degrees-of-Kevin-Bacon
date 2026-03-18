@@ -13,10 +13,8 @@ if testCase.upper() == "RANDOM":
   digits = int(input("How many numbers long should movie/actor IDs be? (Duplicate IDs are deleted.) "))
   nodeCount = int(input("How many IDs should be generated? "))
   randomize(digits, nodeCount)
-  print("Test case randomized.")
 if testCase.upper() == "RESET":
   default()
-  print("Test case reset.")
 
 makeGraph()
 while True:

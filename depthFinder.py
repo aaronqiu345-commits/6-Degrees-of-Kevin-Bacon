@@ -25,8 +25,7 @@ def depth(start, target):
       return True
   for neighbor in nodeStorage[start].neighbors:
     if neighbor.data not in visited:
-      print(f"Searched {start}, rerunning its neighbor {neighbor.data}")
-      print(f"{neighbor.data} : {start}")
+      print(f"Searched {start}, rerunning on its neighbor {neighbor.data}")
       prev[neighbor.data] = start
       if depth(neighbor.data, target):
         return True

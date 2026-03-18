@@ -23,12 +23,9 @@ def makeGraph():
         neighborStorage[actor].append(movie[0])
 
   for node in neighborStorage:
-    print(f"made node {node}")
     makeNode = Node(node)
     nodeStorage[node] = makeNode
 
-  print(nodeStorage)
   for node in nodeStorage:
     for connect in neighborStorage[node]:
       nodeStorage[node].neighbors.append(nodeStorage[connect])
-      print(f"connected {connect} to {node}.")

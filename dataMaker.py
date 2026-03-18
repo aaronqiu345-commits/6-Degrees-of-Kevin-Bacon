@@ -83,3 +83,4 @@ def randomize(count):
     for line in data:
       file.append(line.strip().split("|"))
   print(file)
+  print("Test case randomized.")

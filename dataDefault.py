@@ -5,3 +5,4 @@ def default():
     data.write('Movie8|Actor7|Actor9\n')
     data.write('Movie10|Actor9|Actor11|Actor12\n')
     data.write('Movie11|Actor7|Actor13|Actor14\n')
+  print("Test case reset.")

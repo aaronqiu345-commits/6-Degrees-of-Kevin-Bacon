@@ -1,4 +1,5 @@
 from grapher import Node, nodeStorage
+from collections import deque
 def breadth(start, target):
   queue = deque([start])
   visited = {start}

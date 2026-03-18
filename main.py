@@ -9,8 +9,8 @@ import time
 
 testCase = input("Would you like to randomize the test case? Type Y if so. ")
 if testCase.upper() == "Y":
-  digits = input("How many numbers long should movie/actor IDs be? (Duplicate IDs are deleted.)
-  nodeCount = input("How many IDs should be generated?")
+  digits = input("How many numbers long should movie/actor IDs be? (Duplicate IDs are deleted.) ")
+  nodeCount = input("How many IDs should be generated? ")
   randomize(digits, nodeCount)
 
 makeGraph()

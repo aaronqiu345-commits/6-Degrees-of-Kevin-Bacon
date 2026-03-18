@@ -1,25 +1,27 @@
 from grapher import Node, nodeStorage
-from collections import deque
-queue = deque([])
-visited = []
 def breadth(start, target):
   queue = deque([start])
-  visited = []
+  visited = {start}
+  prev = {}
+  path = []
   while len(queue) != 0:
     layer = range(len(queue))
+    print(f"finished layer. next up: {queue}")
     for i in layer:
-      que = [] # purely a debugging/console list
-      for item in queue:
-        que.append(item)
-      print(f"Next up: {que}")
       next = queue.popleft()
-      neigh = [] # purely a debugging/console list
+      visited.add(next)
       for neighbor in nodeStorage[next].neighbors:
-        neigh.append(neighbor.data)
-      print(f"Neighbors of {next}: {neigh}")
-      visited.append(next)
-      for neighbor in nodeStorage[next].neighbors:
+        if neighbor.data not in prev and neighbor.data not in visited:
+          prev[neighbor.data] = next
+          print(prev)
         if neighbor.data == target:
-          return f"found {target} as a neighbor of {nodeStorage[next].data}"
+          track = neighbor.data
+          while track in prev:
+            path.append(track)
+            track = prev[track]
+          path = path[::-1]
+          print(f"Path: {path}")
+          return f"Found {target} in {len(path)-1} steps"
         if neighbor.data not in visited and neighbor.data not in queue:
           queue.append(neighbor.data)
+  return f"Could not find {target}"

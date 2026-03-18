@@ -3,7 +3,7 @@ from graphReader import read
 from breadthFinder import breadth
 from depthFinder import depth
 from customFinder import doubleBread
-from datamaker import randomize
+from dataMaker import randomize
 
 import time
 

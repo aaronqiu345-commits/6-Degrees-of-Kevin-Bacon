@@ -25,7 +25,8 @@ while True:
     timeStart = time.perf_counter()
     depth(start, target)
     timeEnd = time.perf_counter()
-    break
+    timeTotal = timeEnd - timeStart
+    print(f"Time taken: {timeTotal:.2f}")
   elif todo.upper() == "BFS":
     print("Breadth-First-Search selected.")
     start = input("Where do you want to start from? ")
@@ -33,7 +34,8 @@ while True:
     timeStart = time.perf_counter()
     breadth(start, target)
     timeEnd = time.perf_counter()
-    break
+    timeTotal = timeEnd - timeStart
+    print(f"Time taken: {timeTotal:.2f}")
   elif todo.upper() == "CUSTOM":
     print("Double-Breadth-Search selected.")
     start = input("Where do you want to start from? ")
@@ -41,12 +43,9 @@ while True:
     timeStart = time.perf_counter()
     doubleBread(start, target)
     timeEnd = time.perf_counter()
+    timeTotal = timeEnd - timeStart
+    print(f"Time taken: {timeTotal:.2f}")
   elif todo.upper() == "READ":
     print("Graph reading selected.")
     start = input("Where do you want to start reading from? ")
-    timeStart = time.perf_counter()
     read(start)
-    timeEnd = time.perf_counter()
-    break
-timeTotal = timeEnd - timeStart
-print(f"Time taken: {timeTotal:.2f}")

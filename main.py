@@ -10,9 +10,8 @@ import time
 
 testCase = input("Would you like to randomize or reset the test case? Type RANDOM or RESET if so. ")
 if testCase.upper() == "RANDOM":
-  digits = int(input("How many numbers long should movie/actor IDs be? (Duplicate IDs are deleted.) "))
   nodeCount = int(input("How many IDs should be generated? "))
-  randomize(digits, nodeCount)
+  randomize(nodeCount)
 if testCase.upper() == "RESET":
   default()
 

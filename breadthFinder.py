@@ -1,10 +1,10 @@
-from grapher import Node, nodeStorage
+from main import Node, nodeStorage
 from collections import deque
 def breadth(start, target):
   queue = deque([start])
   visited = {start}
   prev = {}
-  path = [start]
+  path = []
   while len(queue) != 0:
     layer = range(len(queue))
     print(f"Finished layer. Next up: {queue}")
@@ -19,6 +19,7 @@ def breadth(start, target):
           while track in prev:
             path.append(track)
             track = prev[track]
+          path.append(track)
           path = path[::-1]
           print(f"Path: {path}")
           return f"Found {target} in {len(path)-1} steps"

@@ -1,4 +1,4 @@
-from grapher import Node, nodeStorage
+from main import Node, nodeStorage
 visited = []
 prev = {}
 path = []

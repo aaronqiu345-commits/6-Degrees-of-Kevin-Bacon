@@ -1,4 +1,4 @@
-from grapher import Node, nodeStorage
+from main import Node, nodeStorage
 from collections import deque
 
 def constructPath(end1, prev1, end2, prev2):

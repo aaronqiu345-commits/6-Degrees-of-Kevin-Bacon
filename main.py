@@ -40,6 +40,8 @@ def randomize(configFile, count):
   line = []
   lines = []
   lastAct = None
+  webRNG = random.randint(1, 4)
+  freqRNG = random.randint(0, 2)
 
   def addctor(id):
     nonlocal lastAct
@@ -56,42 +58,32 @@ def randomize(configFile, count):
 
   while len(ids) != 0:
     id = ids.pop() + 1
-    RNG = random.randint(1, 4)
+    lenRNG = random.randint(1, 4)
     if len(line) == 0:
       addvie(id)
       if lastAct:
         line.append(lastAct)
     else:
       addctor(id)
-
-    if RNG == 1 and len(line) >= 3 or len(line) == 5:
+    if lenRNG == 1 and len(line) >= 4 or len(line) == 6:
+      if len(uniqueActors) > 1:
+        if (webRNG - freqRNG) > 0:
+          totalWeb = random.randint(0, webRNG - freqRNG)
+          if totalWeb < len(uniqueActors):
+            print(f"rolled {totalWeb} webs")
+            for x in range(totalWeb):
+              randAct = random.choice(tuple(uniqueActors))
+              while randAct in line:
+                print(f"double web {randAct}, gotta reroll")
+                randAct = random.choice(tuple(uniqueActors))
+              print(f"webbing {randAct} to {line}")
+              line.append(randAct)
+      for actor in line[1:]:
+        uniqueActors.add(actor)
       lines.append("|".join(line))
+      print(f"adding line {line}")
       line = []
-      treeRNG = random.randint(1, 2)
-      if treeRNG == 1 and len(ids) >= 3:
-        brancher = lastAct
-        branchRNG = random.randint(1, 3)
-        for i in range(branchRNG):
-          if len(ids) != 0:
-            id = ids.pop() + 1
-            addvie(id)
-            line.append(f"{brancher}")
-            leafRNG = random.randint(1, 2)
-            for i in range(leafRNG):
-              if len(ids) != 0:
-                id = ids.pop() + 1
-                addctor(id)
-
-              else:
-                print(line)
-                lines.append("|".join(line))
-                line = []
-                break
-            lines.append("|".join(line))
-            line = []
-          else:
-            break
-
+      
   if len(line) != 0:
     lines.append("|".join(line))
     line = []
@@ -101,13 +93,16 @@ def randomize(configFile, count):
     for line in lines:
       data.write(f"{line}\n")
 
-  fileText = []
-  with open(configFile, encoding="utf-8") as data:
-    for line in data:
-      fileText.append(line.strip().split("|"))
-  print(fileText)
   print("Test case randomized.")
+print("Final dataset:")
+  for movie in lines:
+    print(movie)
 
+
+  if (webRNG - freqRNG) < 1:
+    print(f"totalWeb rolled less than 1, no webs were made")
+  else:
+    print(f"totalWeb range was 0 to {webRNG - freqRNG}")
 
 
 
@@ -130,8 +125,11 @@ with open('config.txt') as data:
 
 testCase = input("Would you like to randomize the config file? Type RANDOM if so. ")
 if testCase.upper() == "RANDOM":
-  nodeCount = int(input("How many IDs should be generated? "))
-  randomize(config, nodeCount)
+  reroll = Y
+  while reroll.upper() == "Y":
+    nodeCount = int(input("How many IDs should be generated? "))
+    randomize(config, nodeCount)
+    reroll = input("Do you want to generate another test case? If so, type Y.")
 
 makeGraph(config)
 

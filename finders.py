@@ -1,5 +1,71 @@
-from main import Node, nodeStorage
+#import zone
 from collections import deque
+
+#whats a node
+
+class Node:
+  def __init__(self, data):
+    self.data = data
+    self.neighbors = []
+nodeStorage = {}
+
+#function zone
+dVisited = []
+dPrev = {}
+dPath = []
+def depth(start, target):
+  global dVisited
+  global dPath
+  if len(dVisited) == 0:
+    dPath.append(start)
+  if start in dVisited:
+    return
+  dVisited.append(start)
+  if start == target:
+      track = target
+      revPath = []
+      while track in dPrev:
+        revPath.append(track)
+        track = dPrev[track]
+      revPath = revPath[::-1]
+      dPath = dPath + revPath
+      print(f"Found {target} in {len(dPath)-1} steps")
+      print(f"Path: {dPath}")
+      dVisited = []
+      return True
+  for neighbor in nodeStorage[start].neighbors:
+    if neighbor.data not in dVisited:
+      print(f"Searched {start}, rerunning on its neighbor {neighbor.data}")
+      dPrev[neighbor.data] = start
+      if depth(neighbor.data, target):
+        return True
+
+def breadth(start, target):
+  queue = deque([start])
+  visited = {start}
+  prev = {}
+  path = []
+  while len(queue) != 0:
+    layer = range(len(queue))
+    print(f"Finished layer. Next up: {queue}")
+    for i in layer:
+      next = queue.popleft()
+      visited.add(next)
+      for neighbor in nodeStorage[next].neighbors:
+        if neighbor.data not in prev and neighbor.data not in visited:
+          prev[neighbor.data] = next
+        if neighbor.data == target:
+          track = neighbor.data
+          while track in prev:
+            path.append(track)
+            track = prev[track]
+          path.append(track)
+          path = path[::-1]
+          print(f"Path: {path}")
+          return f"Found {target} in {len(path)-1} steps"
+        if neighbor.data not in visited and neighbor.data not in queue:
+          queue.append(neighbor.data)
+  return f"Could not find {target}."
 
 def constructPath(end1, prev1, end2, prev2):
   path = []

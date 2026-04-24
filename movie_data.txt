@@ -1,0 +1,73 @@
+Footloose|Kevin Bacon|Lori Singer|John Lithgow|Dianne Wiest
+Apollo 13|Kevin Bacon|Tom Hanks|Bill Paxton|Gary Sinise
+X-Men: First Class|Kevin Bacon|Jennifer Lawrence|Michael Fassbender|James McAvoy
+Mystic River|Kevin Bacon|Sean Penn|Tim Robbins|Laurence Fishburne
+A Few Good Men|Kevin Bacon|Tom Cruise|Demi Moore|Jack Nicholson
+The Post|Tom Hanks|Meryl Streep|Sarah Paulson|Bob Odenkirk
+Don't Look Up|Meryl Streep|Leonardo DiCaprio|Jennifer Lawrence|Timothée Chalamet
+Inception|Leonardo DiCaprio|Cillian Murphy|Tom Hardy|Elliot Page
+Oppenheimer|Cillian Murphy|Robert Downey Jr.|Emily Blunt|Matt Damon
+The Avengers|Robert Downey Jr.|Scarlett Johansson|Chris Evans|Mark Ruffalo
+The Prestige|Scarlett Johansson|Hugh Jackman|Christian Bale|Michael Caine
+Interstellar|Michael Caine|Matthew McConaughey|Anne Hathaway|Jessica Chastain
+The Martian|Matt Damon|Jessica Chastain|Jeff Daniels|Donald Glover
+Dune: Part Two|Timothée Chalamet|Zendaya|Austin Butler|Florence Pugh
+Spider-Man: No Way Home|Zendaya|Tom Holland|Willem Dafoe|Benedict Cumberbatch
+John Wick|Willem Dafoe|Keanu Reeves|Ian McShane|John Leguizamo
+The Matrix|Keanu Reeves|Laurence Fishburne|Carrie-Anne Moss|Hugo Weaving
+The Last of Us|Pedro Pascal|Bella Ramsey|Nick Offerman|Anna Torv
+The Unbearable Weight of Massive Talent|Pedro Pascal|Nicolas Cage|Tiffany Haddish|Neil Patrick Harris
+Wild at Heart|Nicolas Cage|Willem Dafoe|Laura Dern|Diane Ladd
+Jurassic Park|Laura Dern|Jeff Goldblum|Sam Neill|Samuel L. Jackson
+Pulp Fiction|Samuel L. Jackson|John Travolta|Uma Thurman|Bruce Willis
+The Hateful Eight|Samuel L. Jackson|Kurt Russell|Jennifer Jason Leigh|Walton Goggins
+The Thing|Kurt Russell|Wilford Brimley|Keith David|T.K. Carter
+The Expendables|Bruce Willis|Sylvester Stallone|Arnold Schwarzenegger|Jason Statham
+Fast X|Jason Statham|Vin Diesel|Michelle Rodriguez|Jason Momoa
+Guardians of the Galaxy|Vin Diesel|Chris Pratt|Zoe Saldana|Bradley Cooper
+The Hangover|Bradley Cooper|Zach Galifianakis|Ed Helms|Mike Tyson
+Ip Man 3|Mike Tyson|Donnie Yen|Lynn Hung|Zhang Jin
+Hero|Donnie Yen|Jet Li|Tony Leung|Maggie Cheung
+In the Mood for Love|Tony Leung|Maggie Cheung|Rebecca Pan|Siu Ping-lam
+The Grand Budapest Hotel|Tilda Swinton|Bill Murray|Willem Dafoe|Jeff Goldblum
+Asteroid City|Bill Murray|Scarlett Johansson|Tom Hanks|Jason Schwartzman
+The Irishman|Al Pacino|Robert De Niro|Joe Pesci|Harvey Keitel
+Heat|Al Pacino|Robert De Niro|Val Kilmer|Natalie Portman
+Leon: The Professional|Natalie Portman|Jean Reno|Gary Oldman|Danny Aiello
+The Dark Knight|Gary Oldman|Christian Bale|Heath Ledger|Morgan Freeman
+The Shawshank Redemption|Morgan Freeman|Tim Robbins|Bob Gunton|William Sadler
+The Muppets|Michael Caine|Kermit the Frog|Miss Piggy|Jason Segel
+The Great Muppet Caper|Kermit the Frog|Miss Piggy|John Cleese|Diana Rigg
+Monty Python and the Holy Grail|John Cleese|Eric Idle|Graham Chapman|Terry Gilliam
+Star Wars: A New Hope|Harrison Ford|Mark Hamill|Carrie Fisher|Alec Guinness
+Raiders of the Lost Ark|Harrison Ford|Karen Allen|John Rhys-Davies|Paul Freeman
+The Lord of the Rings|John Rhys-Davies|Elijah Wood|Ian McKellen|Viggo Mortensen
+X-Men|Ian McKellen|Patrick Stewart|Hugh Jackman|Halle Berry
+The Wizard of Oz|Judy Garland|Frank Morgan|Ray Bolger|Bert Lahr
+Judgment at Nuremberg|Judy Garland|Spencer Tracy|Burt Lancaster|Montgomery Clift
+Guess Who's Coming to Dinner|Spencer Tracy|Katharine Hepburn|Sidney Poitier|Beah Richards
+The Lion in Winter|Katharine Hepburn|Peter O'Toole|Anthony Hopkins|Timothy Dalton
+The Silence of the Lambs|Anthony Hopkins|Jodie Foster|Scott Glenn|Ted Levine
+Taxi Driver|Jodie Foster|Robert De Niro|Harvey Keitel|Cybill Shepherd
+Citizen Kane|Orson Welles|Joseph Cotten|Dorothy Comingore|Everett Sloane
+The Third Man|Orson Welles|Joseph Cotten|Alida Valli|Trevor Howard
+Gone with the Wind|Vivien Leigh|Clark Gable|Leslie Howard|Olivia de Havilland
+A Streetcar Named Desire|Vivien Leigh|Marlon Brando|Kim Hunter|Karl Malden
+The Godfather|Marlon Brando|Al Pacino|James Caan|Robert Duvall
+Apocalypse Now|Marlon Brando|Robert Duvall|Martin Sheen|Laurence Fishburne
+Parasite|Song Kang-ho|Lee Sun-kyun|Cho Yeo-jeong|Choi Woo-shik
+Decision to Leave|Tang Wei|Park Hae-il|Lee Jung-hyun|Go Kyung-pyo
+Metropolis|Alfred Abel|Brigitte Helm|Gustav Fröhlich|Rudolf Klein-Rogge
+Seven Samurai|Toshiro Mifune|Takashi Shimura|Keiko Tsushima|Isao Kimura
+Yojimbo|Toshiro Mifune|Tatsuya Nakadai|Yoko Tsukasa|Isuzu Yamada
+Ran|Tatsuya Nakadai|Akira Terao|Jinpachi Nezu|Mieko Harada
+High and Low|Toshiro Mifune|Tatsuya Nakadai|Kyōko Kagawa|Tatsuya Mihashi
+The Seventh Seal|Max von Sydow|Gunnar Björnstrand|Bibi Andersson|Nils Poppe
+The Exorcist|Max von Sydow|Ellen Burstyn|Jason Miller|Linda Blair
+Requiem for a Dream|Ellen Burstyn|Jared Leto|Jennifer Connelly|Marlon Wayans
+Blade Runner 2049|Jared Leto|Ryan Gosling|Harrison Ford|Ana de Armas
+Knives Out|Ana de Armas|Daniel Craig|Chris Evans|Jamie Lee Curtis
+Everything Everywhere All At Once|Michelle Yeoh|Ke Huy Quan|Jamie Lee Curtis|Stephanie Hsu
+Crouching Tiger Hidden Dragon|Michelle Yeoh|Chow Yun-fat|Zhang Ziyi|Chang Chen
+Rush Hour 2|Jackie Chan|Chris Tucker|John Lone|Zhang Ziyi
+The Last Emperor|John Lone|Joan Chen|Peter O'Toole|Ryuichi Sakamoto

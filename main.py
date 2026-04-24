@@ -1,24 +1,14 @@
 #import zone
-from breadthFinder import breadth
-from depthFinder import depth
-from customFinder import doubleBread
+from finders import depth, breadth, doubleBread, Node, nodeStorage
 import time
 import random
 import string
 
-#whats a node
-
-class Node:
-  def __init__(self, data):
-    self.data = data
-    self.neighbors = []
-nodeStorage = {}
-
 #function zone
 
-def makeGraph():
+def makeGraph(file):
   lines = []
-  with open('data.txt') as data:
+  with open(file, encoding="utf-8") as data:
     for line in data:
       lines.append(line.strip().split("|"))
   print(lines)
@@ -42,16 +32,7 @@ def makeGraph():
     for connect in neighborStorage[node]:
       nodeStorage[node].neighbors.append(nodeStorage[connect])
 
-def default():
-  with open('data.txt', 'w') as data:
-    data.write('Movie1|Actor2|Actor3|Actor4|Actor5\n')
-    data.write('Movie6|Actor5|Actor7\n')
-    data.write('Movie8|Actor7|Actor9\n')
-    data.write('Movie10|Actor9|Actor11|Actor12\n')
-    data.write('Movie11|Actor7|Actor13|Actor14\n')
-  print("Test case reset.")
-
-def randomize(count):
+def randomize(configFile, count):
 
   nums = string.digits
   times = count
@@ -116,15 +97,15 @@ def randomize(count):
     line = []
   print(lines)
 
-  with open('data.txt', 'w') as data:
+  with open(configFile, 'w', encoding="utf-8") as data:
     for line in lines:
       data.write(f"{line}\n")
 
-  file = []
-  with open('data.txt') as data:
+  fileText = []
+  with open(configFile, encoding="utf-8") as data:
     for line in data:
-      file.append(line.strip().split("|"))
-  print(file)
+      fileText.append(line.strip().split("|"))
+  print(fileText)
   print("Test case randomized.")
 
 
@@ -132,44 +113,36 @@ def randomize(count):
 
 #main zone
 
-testCase = input("Would you like to randomize or reset the test case? Type RANDOM or RESET if so. ")
+mode = None
+config = None
+node1 = None
+node2 = None
+with open('config.txt') as data:
+  for i, line in enumerate(data):
+    if i == 0:
+      mode = line.strip()
+    if i == 1:
+      config = line.strip()
+    if i == 2:
+      searchers = line.strip().split("|")
+      node1 = searchers[0]
+      node2 = searchers[1]
+
+testCase = input("Would you like to randomize the config file? Type RANDOM if so. ")
 if testCase.upper() == "RANDOM":
   nodeCount = int(input("How many IDs should be generated? "))
-  randomize(nodeCount)
-if testCase.upper() == "RESET":
-  default()
+  randomize(config, nodeCount)
 
-makeGraph()
-while True:
-  todo = input("DFS, BFS, or CUSTOM? ")
-  if todo.upper() == "DFS":
-    print("Depth-First-Search selected.")
-    start = input("Where do you want to start from? ")
-    target = input("Where do you want to end at? " )
-    timeStart = time.perf_counter()
-    depth(start, target)
-    timeEnd = time.perf_counter()
-    timeTotal = timeEnd - timeStart
-    print(f"Time taken: {timeTotal:.2f}")
-  elif todo.upper() == "BFS":
-    print("Breadth-First-Search selected.")
-    start = input("Where do you want to start from? ")
-    target = input("Where do you want to end at? ")
-    timeStart = time.perf_counter()
-    breadth(start, target)
-    timeEnd = time.perf_counter()
-    timeTotal = timeEnd - timeStart
-    print(f"Time taken: {timeTotal:.2f}")
-  elif todo.upper() == "CUSTOM":
-    print("Double-Breadth-Search selected.")
-    start = input("Where do you want to start from? ")
-    target = input("Where do you want to end at? ")
-    timeStart = time.perf_counter()
-    doubleBread(start, target)
-    timeEnd = time.perf_counter()
-    timeTotal = timeEnd - timeStart
-    print(f"Time taken: {timeTotal:.2f}")
-  elif todo.upper() == "READ":
-    print("Graph reading selected.")
-    start = input("Where do you want to start reading from? ")
-    read(start)
+makeGraph(config)
+
+timeStart = time.perf_counter()
+if mode.upper() == "DFS":
+  depth(node1, node2)
+if mode.upper() == "BFS":
+  breadth(node1, node2)
+if mode.upper() == "2BFS":
+  doubleBread(node1, node2)
+timeEnd = time.perf_counter()
+timeTotal = timeEnd - timeStart
+print(f"Mode: {mode.upper()}")
+print(f"Time taken: {timeTotal:.2f}")

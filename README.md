@@ -26,7 +26,7 @@ Builds the graph with information from the selected text file. After graph creat
 
 ----------
 
-data.txt
+movie_data.txt
 
 Holds movies and the actors that starred in them in a Movie|Actor|Actor|Actor (and so on) format.
 Line break between movies.

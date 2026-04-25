@@ -39,6 +39,7 @@ def randomize(configFile, count):
   line = []
   lines = []
   lastAct = None
+  uniqueActors = set()
   webRNG = random.randint(1, 4)
   freqRNG = random.randint(0, 2)
 
@@ -91,7 +92,7 @@ def randomize(configFile, count):
       data.write(f"{line}\n")
 
   print("Test case randomized.")
-print("Final dataset:")
+  print("Final dataset:")
   for movie in lines:
     print(movie)
 
@@ -122,14 +123,14 @@ with open('config.txt') as data:
 
 testCase = input("Would you like to randomize the config file? Type RANDOM if so. ")
 if testCase.upper() == "RANDOM":
-  reroll = Y
+  reroll = "Y"
   while reroll.upper() == "Y":
     nodeCount = int(input("How many IDs should be generated? "))
     randomize(config, nodeCount)
     reroll = input("Do you want to generate another test case? If so, type Y.")
-  if reroll != Y:
+  if reroll != "Y":
     while True:
-      display = input("Test case finalized. Modify config.txt with new starting and ending node.)
+      display = input("Test case finalized. Modify config.txt with new starting and ending node." )
 
 makeGraph(config)
 

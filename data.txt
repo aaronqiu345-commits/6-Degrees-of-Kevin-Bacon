@@ -1,4 +1,0 @@
-Movie1|Actor1|Actor2|ActorX
-Movie2|Actor2|Actor3
-Movie3|Actor3|Actor4
-Movie4|Actor4|Actor5|ActorX

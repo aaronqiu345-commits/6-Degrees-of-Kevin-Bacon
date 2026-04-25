@@ -62,7 +62,8 @@ def breadth(start, target):
           path.append(track)
           path = path[::-1]
           print(f"Path: {path}")
-          return f"Found {target} in {len(path)-1} steps"
+          print (f"Found {target} in {len(path)-1} steps")
+          return
         if neighbor.data not in visited and neighbor.data not in queue:
           queue.append(neighbor.data)
   return f"Could not find {target}."
@@ -109,7 +110,7 @@ def doubleBread(node, target):
         for neighbor in nodeStorage[startNext].neighbors:
           if neighbor.data in targetVisited:
             startPrev[neighbor.data] = startNext
-            print(f"path from {node} to {target} found in {startLayers + targetLayers}")
+            print(f"Path from {node} to {target} found in {startLayers + targetLayers} steps")
             print(constructPath(neighbor.data, startPrev, targetNext, targetPrev))
             return
           if neighbor.data not in startVisited:

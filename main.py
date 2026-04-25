@@ -34,7 +34,6 @@ def makeGraph(file):
 
 def randomize(configFile, count):
 
-  nums = string.digits
   times = count
   ids = set()
   line = []
@@ -52,9 +51,7 @@ def randomize(configFile, count):
     line.append(f"Movie{id}")
 
   for x in range(times):
-    # digits = ''.join(random.choices(nums, k = digitCount))
     ids.add(x)
-  print(ids)
 
   while len(ids) != 0:
     id = ids.pop() + 1
@@ -130,6 +127,9 @@ if testCase.upper() == "RANDOM":
     nodeCount = int(input("How many IDs should be generated? "))
     randomize(config, nodeCount)
     reroll = input("Do you want to generate another test case? If so, type Y.")
+  if reroll != Y:
+    while True:
+      display = input("Test case finalized. Modify config.txt with new starting and ending node.)
 
 makeGraph(config)
 
